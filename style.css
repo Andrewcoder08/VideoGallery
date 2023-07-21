@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Amatic SC", cursive;
+  background: #ffcc66;
+}
+
+/* style for heading */
+.container .heading {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 2rem 0;
+  letter-spacing: 0.03em;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+img.icon {
+  width: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 1rem;
+}
+/* parent div video container getting display flex and aligns child as */
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* giving height and width to individual video and overflow hidden so the part that is outside this specified height width is removed */
+.video-container .video {
+  height: 15rem;
+  width: 25rem;
+  margin: 1.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+/* center aligning the thumbnails of video */
+.video-container .video iframe {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.video-container .video:hover {
+  border: 2px solid white;
+}
+
+/* style to add when video is active */
+.video-container .video .active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto; /* since I want to be aligned at center vertically */
+  /* horizontal length, vertical length, blur radius, spread radius,  */
+  box-shadow: 0 0 0 100vh rgba(0, 0, 0, 0.5);
+  width: 80%;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  img.icon {
+    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+}
